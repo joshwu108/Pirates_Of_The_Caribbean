@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv0k6m28nptvx"]
+
+[ext_resource type="Texture2D" uid="uid://btx1tsgnee7r7" path="res://Game_Art/Screenshot_2024-11-19_at_9.57.10_AM-removebg-preview.png" id="1_mtk1l"]
+[ext_resource type="Script" path="res://player.gd" id="1_objlg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d56hi"]
+atlas = ExtResource("1_mtk1l")
+region = Rect2(90, 116, 74, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v5ow"]
+atlas = ExtResource("1_mtk1l")
+region = Rect2(164, 116, 74, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6hxx"]
+atlas = ExtResource("1_mtk1l")
+region = Rect2(238, 116, 74, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ulrbo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d56hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v5ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6hxx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_buv02"]
+radius = 11.0
+height = 38.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_objlg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ulrbo")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.857987
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("CapsuleShape2D_buv02")
