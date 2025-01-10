@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="3_iavar"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="4_gxo8g"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8keee"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbo6j"]
 resource_name = "Prison"
 texture = ExtResource("2_ydr5c")
 texture_region_size = Vector2i(21, 21)
@@ -1078,7 +1078,7 @@ texture_region_size = Vector2i(21, 21)
 21:19/0 = 0
 21:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-117.733, -52.3259, 126.219, -50.2046, 129.754, -6.36395, -121.976, -5.65685)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_455g8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
 texture = ExtResource("4_gxo8g")
 0:0/0 = 0
 1:0/0 = 0
@@ -4980,12 +4980,12 @@ texture = ExtResource("4_gxo8g")
 
 [sub_resource type="TileSet" id="TileSet_6k1ps"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_8keee")
-sources/1 = SubResource("TileSetAtlasSource_455g8")
+sources/0 = SubResource("TileSetAtlasSource_mbo6j")
+sources/1 = SubResource("TileSetAtlasSource_745gw")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gflp3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nr77t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgcko"]
 texture = ExtResource("4_gxo8g")
 0:0/0 = 0
 1:0/0 = 0
@@ -8871,7 +8871,7 @@ texture = ExtResource("4_gxo8g")
 35:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6edt1"]
-sources/0 = SubResource("TileSetAtlasSource_nr77t")
+sources/0 = SubResource("TileSetAtlasSource_wgcko")
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)

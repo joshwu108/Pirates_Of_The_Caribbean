@@ -37,6 +37,6 @@ text = "Start Over"
 position = Vector2(76, -12)
 zoom = Vector2(0.65, 0.65)
 
-[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="home" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="start_over" to="." method="_on_start_over_pressed"]
