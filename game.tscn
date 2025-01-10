@@ -1080,6 +1080,9 @@ texture_region_size = Vector2i(21, 21)
 21:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-117.733, -52.3259, 126.219, -50.2046, 129.754, -6.36395, -121.976, -5.65685)
 43:7/size_in_atlas = Vector2i(3, 2)
 43:7/0 = 0
+46:9/size_in_atlas = Vector2i(10, 4)
+46:9/0 = 0
+58:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
 texture = ExtResource("4_gxo8g")
@@ -8892,6 +8895,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gby8"]
+radius = 21.3776
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)
@@ -8925,6 +8929,7 @@ position = Vector2(20, 355)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(11, 234)
 shape = SubResource("WorldBoundaryShape2D_gflp3")
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -8943,6 +8948,7 @@ sprite_frames = SubResource("SpriteFrames_1r7i4")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4953, 326)
 shape = SubResource("CircleShape2D_4gby8")
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]

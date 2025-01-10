@@ -30,12 +30,13 @@ limit_right = 20000000
 limit_bottom = 20000000
 
 [node name="Start" type="Button" parent="."]
-offset_left = -94.0
-offset_top = 330.0
+offset_left = -160.0
+offset_top = 316.0
 offset_right = 165.0
 offset_bottom = 404.0
 theme_override_colors/icon_normal_color = Color(0.947499, 0.448927, 0.290676, 1)
 theme_override_colors/icon_hover_color = Color(0.815829, 0.28854, 1.92523e-07, 1)
+theme_override_font_sizes/font_size = 30
 text = "Start"
 icon = SubResource("CanvasTexture_vaon8")
 

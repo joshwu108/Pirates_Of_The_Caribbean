@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://box1b3iclc00r"]
+[gd_scene load_steps=12 format=3 uid="uid://mp4dehaepu70"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_gsx2u"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="2_kl6tw"]
@@ -8466,7 +8466,7 @@ sources/4 = SubResource("TileSetAtlasSource_jnhe2")
 
 [node name="player" parent="." instance=ExtResource("1_gsx2u")]
 visibility_layer = 2
-position = Vector2(58, -154)
+position = Vector2(80, -134)
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
