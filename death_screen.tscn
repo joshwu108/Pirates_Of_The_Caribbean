@@ -20,23 +20,25 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-65532, 1, 0)
 
 [node name="home" type="Button" parent="."]
-offset_left = -269.0
-offset_top = 291.0
+offset_left = -380.0
+offset_top = 257.0
 offset_right = -89.0
 offset_bottom = 353.0
+theme_override_font_sizes/font_size = 30
 text = "Home"
 
 [node name="start_over" type="Button" parent="."]
-offset_left = 80.0
-offset_top = 295.0
-offset_right = 263.0
-offset_bottom = 358.0
+offset_left = 207.0
+offset_top = 264.0
+offset_right = 475.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 30
 text = "Start Over"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(76, -12)
 zoom = Vector2(0.65, 0.65)
 
-[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="home" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="start_over" to="." method="_on_start_over_pressed"]
