@@ -4115,7 +4115,7 @@ size = Vector2(1976, 429)
 size = Vector2(1237.25, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm747"]
-size = Vector2(71.5, 50)
+size = Vector2(62.75, 50)
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)
@@ -4251,7 +4251,7 @@ shape = SubResource("RectangleShape2D_lm747")
 position = Vector2(1763, 1640)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone13"]
-position = Vector2(4538, -1524)
+position = Vector2(4533.62, -1524)
 shape = SubResource("RectangleShape2D_lm747")
 
 [node name="KillZone14" parent="KillZones" instance=ExtResource("3_iavar")]
@@ -4265,7 +4265,7 @@ shape = SubResource("RectangleShape2D_lm747")
 position = Vector2(1763, 1640)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone15"]
-position = Vector2(4965, -1517)
+position = Vector2(4949, -1517)
 shape = SubResource("RectangleShape2D_lm747")
 
 [node name="KillZone16" parent="KillZones" instance=ExtResource("3_iavar")]
