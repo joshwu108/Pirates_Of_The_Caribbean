@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://itmu5phdowa7"]
+[gd_scene load_steps=12 format=3 uid="uid://itmu5phdowa7"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_qire6"]
 [ext_resource type="Texture2D" uid="uid://cydtjjh4yewgi" path="res://Game_Art/DALL·E 2025-01-09 09.56.23 - A 2D flat tileset featuring Caribbean pirate town buildings designed as side-view backgrounds. Each building is colorful and modular, with wooden text.webp" id="2_c2je6"]
 [ext_resource type="Texture2D" uid="uid://c76nb71oks25o" path="res://Game_Art/Background_2.jpeg" id="2_wiea2"]
 [ext_resource type="Texture2D" uid="uid://bkxuetbrlu20b" path="res://Game_Art/pirates.v1.png" id="3_pesnk"]
+[ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="5_ew3wx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlbkw"]
 texture = ExtResource("2_wiea2")
@@ -4789,6 +4790,9 @@ sources/7 = SubResource("TileSetAtlasSource_lvy1r")
 sources/11 = SubResource("TileSetAtlasSource_xlbkw")
 sources/12 = SubResource("TileSetAtlasSource_8567a")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncxf1"]
+size = Vector2(11979, 1674)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_qire6")]
@@ -4796,7 +4800,8 @@ top_level = true
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.6, 0.6)
+limit_bottom = 750
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -4816,3 +4821,10 @@ layer_2/tile_data = PackedInt32Array(-1966113, 917516, 0, -1900577, 917516, 0, -
 layer_3/name = "Ship 2"
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(-65472, 458759, 6, -131008, 458759, 6, -131007, 458759, 6, -196543, 458759, 6, -196544, 458759, 6, -196542, 458759, 6, -131072, 458759, 6, -131071, 458759, 6, -65535, 458759, 6, -65536, 458759, 6, -65520, 458759, 6, -131056, 458759, 6)
+
+[node name="KillZone" parent="." instance=ExtResource("5_ew3wx")]
+position = Vector2(-17, 794)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(3050.5, 162)
+shape = SubResource("RectangleShape2D_ncxf1")
