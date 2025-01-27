@@ -1,0 +1,1 @@
+A simple RPG game for our game design class. Based off the popular Pirates of the Caribbean series, we decided to create a game that follows Jack Sparrow as he embarks on a journey to battle the infamous pirate Hector Barbossa.
