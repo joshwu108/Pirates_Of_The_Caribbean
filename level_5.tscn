@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://c2w7kkiak40sv"]
+[gd_scene load_steps=3 format=3 uid="uid://c2w7kkiak40sv"]
+
+[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_ebwbk"]
+
+[sub_resource type="TileSet" id="TileSet_yjdik"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_ebwbk")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_bottom = 750
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_yjdik")
+format = 2

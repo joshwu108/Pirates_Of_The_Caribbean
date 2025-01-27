@@ -4282,5 +4282,16 @@ position = Vector2(1763, 1640)
 position = Vector2(5307, -1517)
 shape = SubResource("RectangleShape2D_lm747")
 
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -123.0
+offset_top = -166.0
+offset_right = 601.0
+offset_bottom = -42.0
+theme_override_font_sizes/font_size = 25
+text = "Welcome Jack Sparrow! You must escape the British prison and help Will Turner save his girlfriend if you want to live! Defeat the British soldiers and find the key to escape!"
+autowrap_mode = 2
+
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
