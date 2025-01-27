@@ -4285,13 +4285,48 @@ shape = SubResource("RectangleShape2D_lm747")
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = -123.0
-offset_top = -166.0
-offset_right = 601.0
-offset_bottom = -42.0
+offset_left = -134.0
+offset_top = -184.0
+offset_right = 516.0
+offset_bottom = -35.0
 theme_override_font_sizes/font_size = 25
-text = "Welcome Jack Sparrow! You must escape the British prison and help Will Turner save his girlfriend if you want to live! Defeat the British soldiers and find the key to escape!"
+text = "Welcome Jack Sparrow! You must escape the prison and help Will Turner save his girlfriend if you want to live! Defeat the British soldiers and find the key to escape!"
 autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Labels"]
+anchors_preset = -1
+anchor_left = 0.307
+anchor_top = -0.039
+anchor_right = 0.307
+anchor_bottom = -0.039
+offset_left = 1608.34
+offset_top = -556.728
+offset_right = 2114.34
+offset_bottom = -427.728
+theme_override_font_sizes/font_size = 35
+text = "Get across the lake of poison! "
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 5001.0
+offset_top = -506.0
+offset_right = 5172.0
+offset_bottom = -483.0
+theme_override_font_sizes/font_size = 35
+text = "That's a lot of spikes...
+"
+
+[node name="Label4" type="Label" parent="Labels"]
+anchors_preset = -1
+anchor_left = 0.697
+anchor_top = -0.113
+anchor_right = 0.697
+anchor_bottom = -0.113
+offset_left = 5771.06
+offset_top = -108.776
+offset_right = 6638.06
+offset_bottom = -24.776
+theme_override_font_sizes/font_size = 35
+text = "Congratulations! You have found the key to escape!"
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
