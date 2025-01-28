@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cudmrdu67gymj"]
+[gd_scene load_steps=8 format=3 uid="uid://mlorj80l0jqo"]
 
 [ext_resource type="Texture2D" uid="uid://c7ug142uew30j" path="res://Game_Art/Magic-Cliffs-Environment/PNG/tileset.png" id="1_ri78w"]
 [ext_resource type="Texture2D" uid="uid://dlc8get1seemr" path="res://Game_Art/Magic-Cliffs-Environment/PNG/sky.png" id="2_6a8bp"]
 [ext_resource type="Texture2D" uid="uid://dvifjt6wf8uug" path="res://Game_Art/Magic-Cliffs-Environment/PNG/sea.png" id="3_572i3"]
 [ext_resource type="Texture2D" uid="uid://dwjqlggal1q8" path="res://Game_Art/Magic-Cliffs-Environment/PNG/far-grounds.png" id="4_emkop"]
+[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="5_xijql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1b7ds"]
 texture = ExtResource("1_ri78w")
@@ -584,3 +585,8 @@ texture = ExtResource("3_572i3")
 position = Vector2(897, 553)
 scale = Vector2(1.33929, 1.82727)
 texture = ExtResource("4_emkop")
+
+[node name="player" parent="." instance=ExtResource("5_xijql")]
+z_index = 1
+position = Vector2(87, 429)
+scale = Vector2(0.4, 0.4)
