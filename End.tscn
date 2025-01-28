@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://mlorj80l0jqo"]
+[gd_scene load_steps=8 format=3 uid="uid://bu2l0foigb4ye"]
 
 [ext_resource type="Texture2D" uid="uid://c7ug142uew30j" path="res://Game_Art/Magic-Cliffs-Environment/PNG/tileset.png" id="1_ri78w"]
 [ext_resource type="Texture2D" uid="uid://dlc8get1seemr" path="res://Game_Art/Magic-Cliffs-Environment/PNG/sky.png" id="2_6a8bp"]
