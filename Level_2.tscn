@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bly0p6dqxdp1i"]
+[gd_scene load_steps=20 format=3 uid="uid://duliqtjn6fx8i"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_347c2"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_anvax"]
@@ -21107,7 +21107,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Level 2" type="Node2D"]
+[node name="Level_2" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_347c2")]
 visibility_layer = 2
