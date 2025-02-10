@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d36kg07nlo1v5"]
+[gd_scene load_steps=16 format=3 uid="uid://dv0k6m28nptvx"]
 
 [ext_resource type="Texture2D" uid="uid://btx1tsgnee7r7" path="res://Game_Art/Screenshot_2024-11-19_at_9.57.10_AM-removebg-preview.png" id="1_mtk1l"]
 [ext_resource type="Script" path="res://player.gd" id="1_objlg"]
