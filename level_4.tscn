@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxcqust7f42dr"]
+[gd_scene load_steps=7 format=3 uid="uid://calesxw81nlt2"]
 
 [ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Sand Tiles.png" id="1_p0mkb"]
-[ext_resource type="PackedScene" uid="uid://d36kg07nlo1v5" path="res://player.tscn" id="1_r8qjt"]
+[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_r8qjt"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_7g5pb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hvt6"]

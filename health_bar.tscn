@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7cq6ixufsd42"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_u771a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2g7wl"]
+bg_color = Color(0.180392, 0.643137, 0.290196, 1)
+
+[node name="Health_Bar" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_u771a")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 135.0
+offset_bottom = 67.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2g7wl")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Panel"]
+offset_left = 2.0
+offset_top = 26.0
+offset_right = 125.0
+offset_bottom = 58.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 133.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 15
+text = "Current Health"
