@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqhn2gxnxj7xh"]
+[gd_scene load_steps=5 format=3 uid="uid://c2w7kkiak40sv"]
 
-[ext_resource type="PackedScene" uid="uid://d36kg07nlo1v5" path="res://player.tscn" id="1_852jx"]
+[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_852jx"]
 [ext_resource type="Texture2D" uid="uid://c5b4wwn35fqi1" path="res://Game_Art/Gemini_Generated_Image_byw86lbyw86lbyw8.jpeg" id="2_deoin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkneu"]

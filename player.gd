@@ -2,8 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
+@export var Health = 1000
 
 var is_facing_right = true  
+
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
