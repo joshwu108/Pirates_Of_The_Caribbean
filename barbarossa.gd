@@ -23,13 +23,15 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	#if direction.y < -0.1 && is_on_floor():
 		#velocity.y = JUMP_VELOCITY
-	
+	if direction.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else :
+		$AnimatedSprite2D.flip_h = false
 	#Detect Gaps and Jump
-	if not raycast.is_colliding():
-		if direction.y < -0.1 and is_on_floor():
-			velocity.y = JUMP_VELOCITY
+	#if not raycast.is_colliding():
+	#	if direction.y < -0.1 and is_on_floor():
+	#	velocity.y = JUMP_VELOCITY
 			
 	if raycast_front.is_colliding():
-		if direction.y < -0.1 and is_on_floor():
-			velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY
 	move_and_slide()

@@ -1,11 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://duliqtjn6fx8i"]
+[gd_scene load_steps=23 format=3 uid="uid://bly0p6dqxdp1i"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_347c2"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_anvax"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="3_xhrjy"]
 [ext_resource type="Texture2D" uid="uid://dgcgvdxwuwayt" path="res://Game_Art/Screenshot_2025-01-11_at_3.46.19_PM-removebg-preview.png" id="4_xr816"]
 [ext_resource type="Script" path="res://button.gd" id="5_bkhpr"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="6_bvthf"]
 [ext_resource type="Texture2D" uid="uid://b4e0incqwo1oo" path="res://Screenshot 2025-01-18 at 1.12.43 AM.png" id="6_x8ntb"]
+[ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health_bar.tscn" id="8_mvnbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kluim"]
 texture = ExtResource("2_anvax")
@@ -21107,15 +21109,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epn7d"]
+size = Vector2(45, 37)
+
 [node name="Level_2" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_347c2")]
 visibility_layer = 2
 z_index = 1
-position = Vector2(-165, -369)
+position = Vector2(-993, 23)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(8, -6)
+limit_left = -1602
+limit_right = 2400
 limit_bottom = 400
 limit_smoothed = true
 
@@ -21141,13 +21148,23 @@ text = "CLICK
 HERE"
 script = ExtResource("5_bkhpr")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(374, 54)
+[node name="nextLevel" type="Area2D" parent="."]
+position = Vector2(973, 170)
+script = ExtResource("6_bvthf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(598, 120)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="nextLevel"]
+position = Vector2(-1, 4.99998)
 rotation = 1.57559
 scale = Vector2(0.440005, 0.440007)
 sprite_frames = SubResource("SpriteFrames_6xh56")
 autoplay = "default"
 frame_progress = 0.874404
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nextLevel"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_epn7d")
+
+[node name="Health_Bar" parent="." instance=ExtResource("8_mvnbx")]
+
+[connection signal="body_entered" from="nextLevel" to="nextLevel" method="_on_body_entered"]
+[connection signal="child_entered_tree" from="nextLevel" to="player" method="_on_character_body_2d_child_entered_tree"]

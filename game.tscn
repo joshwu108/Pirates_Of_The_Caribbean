@@ -4331,7 +4331,7 @@ theme_override_font_sizes/font_size = 35
 text = "Congratulations! You have found the key to escape!"
 
 [node name="Node2D" parent="." instance=ExtResource("6_dstsg")]
-position = Vector2(434, -320)
+position = Vector2(252, 57)
 
 [node name="Health_Bar" parent="." instance=ExtResource("7_d71xg")]
 
