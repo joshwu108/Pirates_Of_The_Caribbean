@@ -1,12 +1,11 @@
 extends Area2D
 
 @onready var timer = $Timer
-@onready var player = get_tree().get_nodes_in_group("player")[0]
 
 func _on_body_entered(body) -> void:
-	if body == player:
+	if body == get_tree().get_nodes_in_group("player")[0]:
 		_deal_damage(100)
-	if player.Health < 0:
+	if get_tree().get_nodes_in_group("player")[0].Health < 0:
 		timer.start()
 		
 func _deal_damage(amount: int) -> void:

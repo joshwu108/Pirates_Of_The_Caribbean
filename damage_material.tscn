@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjulwbwnopq21"]
+
+[ext_resource type="Script" path="res://damage_material.gd" id="1_p5uot"]
+[ext_resource type="Script" path="res://area_2d.gd" id="2_hxpvu"]
+
+[node name="damage_material" type="Node"]
+script = ExtResource("1_p5uot")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_hxpvu")

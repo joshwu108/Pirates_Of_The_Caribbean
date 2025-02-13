@@ -7,8 +7,12 @@ const JUMP_VELOCITY = -450
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var raycast = $RayCast2D
 @onready var raycast_front = $RayCast2D2
+@export var health = 1000
+
+
 
 func _ready() -> void:
+	$AnimatedSprite2D.visible = true
 	add_to_group("enemy")
 	
 func _physics_process(delta: float) -> void:
@@ -34,4 +38,8 @@ func _physics_process(delta: float) -> void:
 			
 	if raycast_front.is_colliding():
 		velocity.y = JUMP_VELOCITY
+		
+	#Dying
+	if health < 0:
+		$AnimatedSprite2D.visible = false
 	move_and_slide()
