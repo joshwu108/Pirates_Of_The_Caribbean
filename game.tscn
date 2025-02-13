@@ -4126,6 +4126,9 @@ size = Vector2(1075, 32)
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)
 
+[node name="Barbossa" parent="." instance=ExtResource("6_dstsg")]
+position = Vector2(506, -308)
+
 [node name="player" parent="." instance=ExtResource("1_5fiff")]
 visibility_layer = 2
 position = Vector2(-4, -2)
@@ -4335,9 +4338,6 @@ theme_override_font_sizes/font_size = 35
 text = "Congratulations! You have found the key to escape!"
 
 [node name="Health_Bar" parent="." instance=ExtResource("7_d71xg")]
-
-[node name="Node2D" parent="." instance=ExtResource("6_dstsg")]
-position = Vector2(506, -308)
 
 [node name="KillZonesUltimate" type="Node" parent="."]
 

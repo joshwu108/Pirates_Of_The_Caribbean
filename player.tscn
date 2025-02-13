@@ -31,8 +31,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjp3n"]
-radius = 17.0
-height = 34.0
+radius = 237.343
+height = 474.687
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_buv02"]
 radius = 13.3333
@@ -82,7 +82,7 @@ frame_progress = 0.179934
 [node name="damage_material" parent="AnimatedSprite2D" instance=ExtResource("12_5wlh6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/damage_material"]
-position = Vector2(-6, 0)
+position = Vector2(104.104, 22.6842)
 shape = SubResource("CapsuleShape2D_kjp3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

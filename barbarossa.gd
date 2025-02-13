@@ -4,18 +4,20 @@ const SPEED = 200.0
 const attack_range = 50
 const detect_range = 500
 const JUMP_VELOCITY = -450
-@onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var raycast = $RayCast2D
 @onready var raycast_front = $RayCast2D2
-@export var health = 1000
-
-
+@export var health = 500
+@onready var killzone = $AnimatedSprite2D/KillZone
 
 func _ready() -> void:
 	$AnimatedSprite2D.visible = true
 	add_to_group("enemy")
 	
+func _process(delta: float) -> void:
+	killzone.position = $AnimatedSprite2D.position
+	
 func _physics_process(delta: float) -> void:
+	var player = get_tree().get_nodes_in_group("player")[0]
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
