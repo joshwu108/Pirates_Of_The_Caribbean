@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://b3lrf4kmxodil"]
 
 [ext_resource type="Script" path="res://Collectibles/Healer.gd" id="1_0k0xs"]
-[ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Sand Tiles.png" id="2_dnkjy"]
+[ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Game_Art/Sand Tiles.png" id="2_dnkjy"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="3_ll7cl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqgv6"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://caqtuymv8cisu"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_5fiff"]
-[ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://Characters/barbarossa.tscn" id="1_ba3el"]
+[ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://Game_Art/barbarossa.tscn" id="1_ba3el"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://health/KillZone.tscn" id="3_iavar"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="4_gxo8g"]
@@ -4127,10 +4127,11 @@ size = Vector2(1988.5, 174)
 position = Vector2(3, 0)
 
 [node name="Node2D" parent="." instance=ExtResource("1_ba3el")]
+position = Vector2(368, -11)
 
 [node name="player" parent="." instance=ExtResource("1_5fiff")]
 visibility_layer = 2
-position = Vector2(-4, -2)
+position = Vector2(-72, 58)
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
