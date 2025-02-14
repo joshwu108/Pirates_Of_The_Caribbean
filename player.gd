@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
-@export var Health = 1000
+@export var Health = Global.health
 var is_facing_right = true  
 
 @onready var knife_offsets = {
@@ -21,6 +21,7 @@ func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
+	Global.health = Health
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 

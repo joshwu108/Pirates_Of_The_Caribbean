@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="3_iavar"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="4_gxo8g"]
-[ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://barbarossa.tscn" id="6_dstsg"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health_bar.tscn" id="7_d71xg"]
+[ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Healer.tscn" id="8_cehws"]
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://instant_death.tscn" id="8_odd8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
@@ -4114,7 +4114,7 @@ size = Vector2(112, 31.25)
 size = Vector2(1976, 429)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b7sg"]
-size = Vector2(1237.25, 53.5)
+size = Vector2(164.625, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm747"]
 size = Vector2(62.75, 50)
@@ -4124,9 +4124,6 @@ size = Vector2(1075, 32)
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)
-
-[node name="Barbossa" parent="." instance=ExtResource("6_dstsg")]
-position = Vector2(506, -308)
 
 [node name="player" parent="." instance=ExtResource("1_5fiff")]
 visibility_layer = 2
@@ -4195,7 +4192,49 @@ shape = SubResource("RectangleShape2D_0y1ud")
 position = Vector2(255, 1845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone4"]
-position = Vector2(4778, -1717)
+position = Vector2(4295, -1723)
+shape = SubResource("RectangleShape2D_4b7sg")
+
+[node name="KillZone18" parent="KillZones" instance=ExtResource("3_iavar")]
+position = Vector2(255, 1845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone18"]
+position = Vector2(4468, -1721)
+shape = SubResource("RectangleShape2D_4b7sg")
+
+[node name="KillZone21" parent="KillZones" instance=ExtResource("3_iavar")]
+position = Vector2(255, 1845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone21"]
+position = Vector2(4962, -1723)
+shape = SubResource("RectangleShape2D_4b7sg")
+
+[node name="KillZone22" parent="KillZones" instance=ExtResource("3_iavar")]
+position = Vector2(255, 1845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone22"]
+position = Vector2(5123, -1724)
+shape = SubResource("RectangleShape2D_4b7sg")
+
+[node name="KillZone23" parent="KillZones" instance=ExtResource("3_iavar")]
+position = Vector2(255, 1845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone23"]
+position = Vector2(5246, -1718)
+shape = SubResource("RectangleShape2D_4b7sg")
+
+[node name="KillZone19" parent="KillZones" instance=ExtResource("3_iavar")]
+position = Vector2(255, 1845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone19"]
+position = Vector2(4795, -1715)
+shape = SubResource("RectangleShape2D_4b7sg")
+
+[node name="KillZone20" parent="KillZones" instance=ExtResource("3_iavar")]
+position = Vector2(255, 1845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone20"]
+position = Vector2(4631, -1719)
 shape = SubResource("RectangleShape2D_4b7sg")
 
 [node name="KillZone5" parent="KillZones" instance=ExtResource("3_iavar")]
@@ -4356,6 +4395,50 @@ shape = SubResource("RectangleShape2D_4nqng")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death3"]
 position = Vector2(3835, 155)
 shape = SubResource("RectangleShape2D_4nqng")
+
+[node name="Healer" type="Node" parent="."]
+
+[node name="Area2D9" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(510, -306)
+
+[node name="Area2D5" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(1087, -303)
+
+[node name="Area2D10" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(2746, -243)
+
+[node name="Area2D11" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(2867, -251)
+
+[node name="Area2D12" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(3687, -247)
+
+[node name="Area2D13" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(3811, -247)
+
+[node name="Area2D6" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(1157, -304)
+
+[node name="Area2D" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(767, -312)
+
+[node name="Area2D2" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(830, -312)
+
+[node name="Area2D3" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(878, 85)
+
+[node name="Area2D4" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(955, 82)
+
+[node name="Area2D7" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(441, -307)
+
+[node name="Area2D8" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(6453, 60)
+
+[node name="Area2D14" parent="Healer" instance=ExtResource("8_cehws")]
+position = Vector2(6863, 57)
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
