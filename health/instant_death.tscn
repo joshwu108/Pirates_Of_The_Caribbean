@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://h1u783gk0juw"]
 
-[ext_resource type="Script" path="res://instant_death.gd" id="1_bvvgy"]
+[ext_resource type="Script" path="res://health/instant_death.gd" id="1_bvvgy"]
 
 [node name="instant_death" type="Area2D"]
 script = ExtResource("1_bvvgy")

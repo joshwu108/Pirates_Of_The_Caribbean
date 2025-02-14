@@ -1,12 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://caqtuymv8cisu"]
+[gd_scene load_steps=21 format=3 uid="uid://caqtuymv8cisu"]
 
-[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_5fiff"]
+[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_5fiff"]
+[ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://Characters/barbarossa.tscn" id="1_ba3el"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
-[ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="3_iavar"]
+[ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://health/KillZone.tscn" id="3_iavar"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="4_gxo8g"]
-[ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health_bar.tscn" id="7_d71xg"]
-[ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Healer.tscn" id="8_cehws"]
-[ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://instant_death.tscn" id="8_odd8p"]
+[ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://health/instant_death.tscn" id="6_d0hnc"]
+[ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health/health_bar.tscn" id="7_d71xg"]
+[ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Collectibles/Healer.tscn" id="8_cehws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
 texture = ExtResource("4_gxo8g")
@@ -4119,11 +4120,13 @@ size = Vector2(164.625, 53.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm747"]
 size = Vector2(62.75, 50)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nqng"]
-size = Vector2(1075, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5f0i"]
+size = Vector2(1988.5, 174)
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)
+
+[node name="Node2D" parent="." instance=ExtResource("1_ba3el")]
 
 [node name="player" parent="." instance=ExtResource("1_5fiff")]
 visibility_layer = 2
@@ -4378,23 +4381,26 @@ text = "Congratulations! You have found the key to escape!"
 
 [node name="KillZonesUltimate" type="Node" parent="."]
 
-[node name="instant_death" parent="KillZonesUltimate" instance=ExtResource("8_odd8p")]
+[node name="instant_death" parent="KillZonesUltimate" instance=ExtResource("6_d0hnc")]
+position = Vector2(564, 334)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death"]
-position = Vector2(1065, 355)
-shape = SubResource("RectangleShape2D_4nqng")
+position = Vector2(503.5, 61)
+shape = SubResource("RectangleShape2D_e5f0i")
 
-[node name="instant_death2" parent="KillZonesUltimate" instance=ExtResource("8_odd8p")]
+[node name="instant_death2" parent="KillZonesUltimate" instance=ExtResource("6_d0hnc")]
+position = Vector2(564, 334)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death2"]
-position = Vector2(2934, 132)
-shape = SubResource("RectangleShape2D_4nqng")
+position = Vector2(2819.75, -116)
+shape = SubResource("RectangleShape2D_e5f0i")
 
-[node name="instant_death3" parent="KillZonesUltimate" instance=ExtResource("8_odd8p")]
+[node name="instant_death3" parent="KillZonesUltimate" instance=ExtResource("6_d0hnc")]
+position = Vector2(564, 334)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death3"]
-position = Vector2(3835, 155)
-shape = SubResource("RectangleShape2D_4nqng")
+position = Vector2(2842, 66)
+shape = SubResource("RectangleShape2D_e5f0i")
 
 [node name="Healer" type="Node" parent="."]
 
