@@ -30,10 +30,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjp3n"]
-radius = 237.343
-height = 474.687
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_buv02"]
 radius = 13.3333
 height = 49.3333
@@ -41,31 +37,35 @@ height = 49.3333
 [sub_resource type="SpriteFrames" id="SpriteFrames_6g0uo"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 0.3,
 "texture": ExtResource("5_8gm65")
 }, {
-"duration": 0.5,
+"duration": 0.3,
 "texture": ExtResource("6_l680g")
 }, {
-"duration": 0.7,
+"duration": 0.4,
 "texture": ExtResource("7_xagpv")
 }, {
-"duration": 0.7,
+"duration": 0.3,
 "texture": ExtResource("8_dln82")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": ExtResource("9_gvoph")
 }, {
-"duration": 0.5,
+"duration": 0.2,
 "texture": ExtResource("10_xie3u")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": ExtResource("11_ettet")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjp3n"]
+radius = 92.5373
+height = 385.632
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_objlg")
@@ -77,13 +77,7 @@ sprite_frames = SubResource("SpriteFrames_ulrbo")
 animation = &"idle"
 autoplay = "idle"
 frame = 1
-frame_progress = 0.179934
-
-[node name="damage_material" parent="AnimatedSprite2D" instance=ExtResource("12_5wlh6")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/damage_material"]
-position = Vector2(104.104, 22.6842)
-shape = SubResource("CapsuleShape2D_kjp3n")
+frame_progress = 0.321422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-39, 3)
@@ -92,8 +86,19 @@ shape = SubResource("CapsuleShape2D_buv02")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-19, -2)
-scale = Vector2(0.091129, 0.0897138)
+position = Vector2(-24, -3)
+scale = Vector2(0.0855645, 0.0897138)
 sprite_frames = SubResource("SpriteFrames_6g0uo")
-frame = 6
-frame_progress = 1.0
+frame = 5
+frame_progress = 0.178925
+
+[node name="damage_material" parent="AnimatedSprite2D2" instance=ExtResource("12_5wlh6")]
+position = Vector2(35.0613, 22.2931)
+scale = Vector2(1.01037, 0.982759)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/damage_material"]
+position = Vector2(300.746, 419.658)
+rotation = -1.8867
+shape = SubResource("CapsuleShape2D_kjp3n")
+
+[connection signal="body_entered" from="AnimatedSprite2D2/damage_material" to="AnimatedSprite2D2/damage_material" method="_on_body_entered"]

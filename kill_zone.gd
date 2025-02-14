@@ -22,8 +22,6 @@ extends Area2D
 	6: -113,
 }
 
-
-
 func _on_body_entered(body) -> void:
 	if body == get_tree().get_nodes_in_group("player")[0]:
 		_deal_damage(100)
