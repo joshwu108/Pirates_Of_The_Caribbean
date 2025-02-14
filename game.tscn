@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://caqtuymv8cisu"]
+[gd_scene load_steps=20 format=3 uid="uid://caqtuymv8cisu"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_5fiff"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="3_iavar"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="4_gxo8g"]
-[ext_resource type="Script" path="res://area_2d.gd" id="5_vrsmt"]
 [ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://barbarossa.tscn" id="6_dstsg"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health_bar.tscn" id="7_d71xg"]
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://instant_death.tscn" id="8_odd8p"]
@@ -4155,7 +4154,6 @@ layer_2/tile_data = PackedInt32Array(851943, 2424832, 16, 851953, 2424832, 16, 8
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(7223, 17)
-script = ExtResource("5_vrsmt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(19, 18)
