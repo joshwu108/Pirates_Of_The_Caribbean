@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://by1t2asfb2bl" path="res://PNG/3/3_3-PIRATE_ATTACK_005.png" id="6_c14lq"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="8_ylsbf"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rutgr"]
+radius = 254.0
+height = 862.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c1sgx"]
 animations = [{
 "frames": [{
@@ -35,33 +39,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rutgr"]
-radius = 254.0
-height = 862.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xw84k"]
-radius = 17.0
-height = 134.0
+radius = 20.0
+height = 210.0
 
 [node name="Node2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
 collision_mask = 2
 script = ExtResource("1_4uyfn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-38, 45)
-sprite_frames = SubResource("SpriteFrames_c1sgx")
-autoplay = "default"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-229, 148)
 shape = SubResource("CapsuleShape2D_rutgr")
 
-[node name="KillZone" parent="." instance=ExtResource("8_ylsbf")]
-position = Vector2(215, 202)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, -30)
+sprite_frames = SubResource("SpriteFrames_c1sgx")
+autoplay = "default"
+frame = 5
+frame_progress = 0.849173
+offset = Vector2(-158, 75)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(-120, 101)
+[node name="KillZone" parent="AnimatedSprite2D" instance=ExtResource("8_ylsbf")]
+position = Vector2(253, 157)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/KillZone"]
+position = Vector2(-463, 363)
+rotation = -1.98095
 shape = SubResource("CapsuleShape2D_xw84k")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -72,3 +77,5 @@ collision_mask = 2
 target_position = Vector2(50, 0)
 collision_mask = 2
 hit_from_inside = true
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="AnimatedSprite2D/KillZone" method="_on_animated_sprite_2d_frame_changed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://caqtuymv8cisu"]
+[gd_scene load_steps=21 format=3 uid="uid://caqtuymv8cisu"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_5fiff"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://area_2d.gd" id="5_vrsmt"]
 [ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://barbarossa.tscn" id="6_dstsg"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health_bar.tscn" id="7_d71xg"]
+[ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://instant_death.tscn" id="8_odd8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
 texture = ExtResource("4_gxo8g")
@@ -4119,12 +4120,18 @@ size = Vector2(1237.25, 53.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm747"]
 size = Vector2(62.75, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nqng"]
+size = Vector2(1075, 32)
+
 [node name="Game" type="Node2D"]
 position = Vector2(3, 0)
 
+[node name="Barbossa" parent="." instance=ExtResource("6_dstsg")]
+position = Vector2(506, -308)
+
 [node name="player" parent="." instance=ExtResource("1_5fiff")]
 visibility_layer = 2
-position = Vector2(-55, 81)
+position = Vector2(-4, -2)
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -4330,10 +4337,27 @@ offset_bottom = -24.776
 theme_override_font_sizes/font_size = 35
 text = "Congratulations! You have found the key to escape!"
 
-[node name="Node2D" parent="." instance=ExtResource("6_dstsg")]
-position = Vector2(252, 57)
-
 [node name="Health_Bar" parent="." instance=ExtResource("7_d71xg")]
+
+[node name="KillZonesUltimate" type="Node" parent="."]
+
+[node name="instant_death" parent="KillZonesUltimate" instance=ExtResource("8_odd8p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death"]
+position = Vector2(1065, 355)
+shape = SubResource("RectangleShape2D_4nqng")
+
+[node name="instant_death2" parent="KillZonesUltimate" instance=ExtResource("8_odd8p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death2"]
+position = Vector2(2934, 132)
+shape = SubResource("RectangleShape2D_4nqng")
+
+[node name="instant_death3" parent="KillZonesUltimate" instance=ExtResource("8_odd8p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZonesUltimate/instant_death3"]
+position = Vector2(3835, 155)
+shape = SubResource("RectangleShape2D_4nqng")
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

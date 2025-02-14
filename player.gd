@@ -3,8 +3,19 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
 @export var Health = 1000
-
 var is_facing_right = true  
+
+@onready var knife_offsets = {
+	0: Vector2(-283, 173),
+	1: Vector2(-213, -7),  
+	2: Vector2(-323, -217),
+}
+
+@onready var knife_Rotation = {
+	0: 0,  
+	1: -33,  
+	2: -66,
+}
 
 func _ready() -> void:
 	add_to_group("player")
