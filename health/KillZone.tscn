@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv52w8poygygw"]
 
-[ext_resource type="Script" path="res://kill_zone.gd" id="1_jpw67"]
+[ext_resource type="Script" path="res://health/kill_zone.gd" id="1_jpw67"]
 
 [node name="KillZone" type="Area2D"]
 script = ExtResource("1_jpw67")
