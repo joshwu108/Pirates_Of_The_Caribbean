@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://bly0p6dqxdp1i"]
+[gd_scene load_steps=20 format=3 uid="uid://bly0p6dqxdp1i"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_347c2"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_anvax"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="3_xhrjy"]
 [ext_resource type="Texture2D" uid="uid://dgcgvdxwuwayt" path="res://Game_Art/Screenshot_2025-01-11_at_3.46.19_PM-removebg-preview.png" id="4_xr816"]
-[ext_resource type="Script" path="res://button.gd" id="5_bkhpr"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="6_bvthf"]
 [ext_resource type="Texture2D" uid="uid://b4e0incqwo1oo" path="res://Screenshot 2025-01-18 at 1.12.43 AM.png" id="6_x8ntb"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health_bar.tscn" id="8_mvnbx"]
@@ -21046,11 +21045,6 @@ sources/0 = SubResource("TileSetAtlasSource_kluim")
 sources/1 = SubResource("TileSetAtlasSource_x7akn")
 sources/2 = SubResource("TileSetAtlasSource_oytsc")
 
-[sub_resource type="SystemFont" id="SystemFont_x3j33"]
-
-[sub_resource type="Theme" id="Theme_81nm8"]
-default_font = SubResource("SystemFont_x3j33")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u423j"]
 atlas = ExtResource("6_x8ntb")
 region = Rect2(0, 0, 94, 104)
@@ -21137,16 +21131,6 @@ layer_2/name = "Layer2"
 layer_2/z_index = -2
 layer_2/tile_data = PackedInt32Array(196622, 3538945, 32, 196623, 3145729, 32, 196624, 3211265, 32, 196625, 3276801, 32, 196626, 3342337, 32, 196627, 3407873, 32, 196628, 3473409, 32, 196629, 3080193, 32, 196615, 3080193, 32, 196616, 3145729, 32, 196617, 3211265, 32, 196618, 3276801, 32, 196619, 3342337, 32, 196620, 3407873, 32, 196621, 3473409, 32, 196630, 3145729, 32, 196631, 3211265, 32, 196632, 3276801, 32, 196633, 3342337, 32, 196634, 3407873, 32, 196635, 3080193, 32, 196636, 3145729, 32, 262143, 3080193, 32, 196608, 3145729, 32, 196609, 3211265, 32, 196610, 3276801, 32, 196611, 3342337, 32, 196612, 3407873, 32, 196613, 3473409, 32, 196614, 3538945, 32, 196637, 3211265, 32, 196638, 3276801, 32, 196639, 3342337, 32, 196640, 3407873, 32, 196641, 3473409, 32, 196642, 3538945, 32)
 layer_3/name = "Layer3"
-
-[node name="Button" type="Button" parent="."]
-offset_left = 945.0
-offset_top = 94.0
-offset_right = 1001.0
-offset_bottom = 146.0
-theme = SubResource("Theme_81nm8")
-text = "CLICK
-HERE"
-script = ExtResource("5_bkhpr")
 
 [node name="nextLevel" type="Area2D" parent="."]
 position = Vector2(973, 170)
