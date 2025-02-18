@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var player: CharacterBody2D
 @export var patrol_range: int # Distance to patrol in each direction
-@export var speed = 100.0 # Speed of movement
-@export var detection_range = 200.0  # Distance at which enemy detects the player
+@export var speed = 300.0 # Speed of movement
+@export var detection_range = 500.0  # Distance at which enemy detects the player
 # Enemy properties
 var is_patrolling = true
 var is_chasing = false
@@ -31,12 +31,12 @@ func _process(delta):
 
 func patrol():
 	# Move the enemy back and forth within the patrol range
-	if patrol_direction == 1 and position.x >= patrol_end_position.x:
+	if patrol_direction == 1 and position.y >= patrol_end_position.y:
 		patrol_direction = -1  # Change direction to left
-	elif patrol_direction == -1 and position.x <= patrol_start_position.x:
+	elif patrol_direction == -1 and position.y <= patrol_start_position.y:
 		patrol_direction = 1  # Change direction to right
 		
-	velocity.x = speed * patrol_direction
+	velocity.y = speed * patrol_direction
 	move_and_slide()
 	sprite.flip_h = patrol_direction == -1  # Flip when moving left
 
@@ -47,10 +47,10 @@ func patrol():
 
 func chase_player():
 	# Move towards the player
-	var direction_to_player = (player.position - position).normalized()
-	velocity = direction_to_player * speed
+	var direction_to_player = (player.global_position - position).normalized()
+	velocity.y = direction_to_player * speed
 	move_and_slide()
-	sprite.flip_h = direction_to_player.x < 0  # Flip when moving left
+	sprite.flip_h = direction_to_player.y < 0  # Flip when moving left
 
 	# If the player is out of range, stop chasing and start patrolling
 	if !is_within_detection_range():
@@ -59,4 +59,4 @@ func chase_player():
 
 func is_within_detection_range() -> bool:
 	# Check if the player is within detection range of the enemy
-	return position.distance_to(player.position) <= detection_range
+	return position.distance_to(player.global_position) <= detection_range

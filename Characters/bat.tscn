@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bl4wy0edy7y6f"]
 
-[ext_resource type="Script" path="res://bat.gd" id="1_p2eja"]
-[ext_resource type="Texture2D" uid="uid://devgsh08vurgb" path="res://Game_Art/VampireBat.png" id="2_lspfv"]
+[ext_resource type="Script" path="res://Characters/bat.gd" id="1_p2eja"]
+[ext_resource type="Texture2D" uid="uid://5tp1iqrhjqqw" path="res://Game_Art/Basic Undead Animations/Vampire Bat/VampireBat.png" id="2_lspfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyqvn"]
 size = Vector2(12, 10)
