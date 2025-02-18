@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://caqtuymv8cisu"]
+[gd_scene load_steps=22 format=3 uid="uid://caqtuymv8cisu"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_5fiff"]
 [ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://Game_Art/barbarossa.tscn" id="1_ba3el"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://health/instant_death.tscn" id="6_d0hnc"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health/health_bar.tscn" id="7_d71xg"]
 [ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Collectibles/Healer.tscn" id="8_cehws"]
+[ext_resource type="PackedScene" uid="uid://bl4wy0edy7y6f" path="res://Characters/bat.tscn" id="9_ld8cv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
 texture = ExtResource("4_gxo8g")
@@ -4446,6 +4447,8 @@ position = Vector2(6453, 60)
 
 [node name="Area2D14" parent="Healer" instance=ExtResource("8_cehws")]
 position = Vector2(6863, 57)
+
+[node name="Bat" parent="." instance=ExtResource("9_ld8cv")]
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

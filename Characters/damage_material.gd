@@ -24,3 +24,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if get_tree().get_nodes_in_group("enemy").size() > 0 && body == get_tree().get_nodes_in_group("enemy")[0]:
 		get_tree().get_nodes_in_group("enemy")[0].health -= 100
 		print("damage_done")
+	elif get_tree().get_nodes_in_group("bats").size() > 0 && body == get_tree().get_nodes_in_group("bats")[0]:
+		get_tree().get_nodes_in_group("bats")[0].health -= 100
+		print("stuff")
