@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://b50fij7npfs2q"]
+
+[ext_resource type="Script" path="res://skeleton.gd" id="1_88flb"]
+[ext_resource type="Texture2D" uid="uid://dxbiyhqjkmg4n" path="res://DecrepitBones.png" id="2_blljf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o7p4"]
+size = Vector2(2.29167, 3.79688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs1qo"]
+atlas = ExtResource("2_blljf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d4ls"]
+atlas = ExtResource("2_blljf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngj3l"]
+atlas = ExtResource("2_blljf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iad3x"]
+atlas = ExtResource("2_blljf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_finvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs1qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d4ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngj3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iad3x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="skeleton" type="CharacterBody2D" parent="."]
+scale = Vector2(4, 4)
+script = ExtResource("1_88flb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="skeleton"]
+position = Vector2(0.416667, 0.333333)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_1o7p4")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="skeleton"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_finvk")
+autoplay = "default"
+frame_progress = 0.737295
+
+[node name="RayCast2D" type="RayCast2D" parent="skeleton/Sprite"]
+scale = Vector2(0.166667, 0.166667)
+target_position = Vector2(200, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="skeleton" method="_on_timer_timeout"]

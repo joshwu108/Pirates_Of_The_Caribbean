@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv0o56d7ji6ye"]
+
+[ext_resource type="Script" path="res://skeleton.gd" id="1_mmo7e"]
+[ext_resource type="Texture2D" uid="uid://dxbiyhqjkmg4n" path="res://DecrepitBones.png" id="2_m02ov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtfyl"]
+size = Vector2(2.29167, 3.79688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs1qo"]
+atlas = ExtResource("2_m02ov")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d4ls"]
+atlas = ExtResource("2_m02ov")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngj3l"]
+atlas = ExtResource("2_m02ov")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iad3x"]
+atlas = ExtResource("2_m02ov")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbbt4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs1qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d4ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngj3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iad3x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Skeleton" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+collision_mask = 3
+script = ExtResource("1_mmo7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.416667, 0.333333)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_dtfyl")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_cbbt4")
+autoplay = "default"
+frame_progress = 0.607818
