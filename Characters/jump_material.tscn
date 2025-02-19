@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bspopux7q1tcl"]
+
+[ext_resource type="Script" path="res://Characters/jump_material.gd" id="1_180n1"]
+
+[node name="Jump_material" type="Area2D"]
+script = ExtResource("1_180n1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

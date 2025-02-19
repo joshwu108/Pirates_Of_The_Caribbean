@@ -4448,7 +4448,25 @@ position = Vector2(6453, 60)
 [node name="Area2D14" parent="Healer" instance=ExtResource("8_cehws")]
 position = Vector2(6863, 57)
 
-[node name="Bat" parent="." instance=ExtResource("9_ld8cv")]
+[node name="Bats" type="Node" parent="."]
+
+[node name="Bat" parent="Bats" instance=ExtResource("9_ld8cv")]
+position = Vector2(831, -440)
+
+[node name="Bat2" parent="Bats" instance=ExtResource("9_ld8cv")]
+position = Vector2(818, -369)
+
+[node name="Bat3" parent="Bats" instance=ExtResource("9_ld8cv")]
+position = Vector2(857, -386)
+
+[node name="Bat4" parent="Bats" instance=ExtResource("9_ld8cv")]
+position = Vector2(760, -398)
+
+[node name="Bat5" parent="Bats" instance=ExtResource("9_ld8cv")]
+position = Vector2(889, -457)
+
+[node name="Bat6" parent="Bats" instance=ExtResource("9_ld8cv")]
+position = Vector2(773, -451)
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

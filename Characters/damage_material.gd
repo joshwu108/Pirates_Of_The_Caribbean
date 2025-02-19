@@ -1,5 +1,7 @@
 extends Area2D
 
+signal bat_entered(enemy)#sending signal
+
 @onready var knife_offsets = {
 	0: Vector2(254, 45),
 	1: Vector2(115, -204),  
@@ -20,10 +22,14 @@ extends Area2D
 	6: 41.5,
 }
 
+func _ready() -> void:
+	add_to_group("damage_material")
+	connect("body_entered", Callable(self, "_on_body_entered"))
+
 func _on_body_entered(body: Node2D) -> void:
 	if get_tree().get_nodes_in_group("enemy").size() > 0 && body == get_tree().get_nodes_in_group("enemy")[0]:
 		get_tree().get_nodes_in_group("enemy")[0].health -= 100
 		print("damage_done")
-	elif get_tree().get_nodes_in_group("bats").size() > 0 && body == get_tree().get_nodes_in_group("bats")[0]:
-		get_tree().get_nodes_in_group("bats")[0].health -= 100
-		print("stuff")
+	elif get_tree().get_nodes_in_group("bats").size() > 0 && body.is_in_group("bats"):
+		emit_signal("bat_entered", body)
+		

@@ -25,7 +25,13 @@ func _ready() -> void:
 	add_to_group(\"enemy\")
 	
 func _process(delta: float) -> void:
+	var jump = get_tree().get_nodes_in_group(\"jump\")[0]
+	jump.connect(\"jump\", Callable(self, \"_on_jump\"))
 	killzone.position = $AnimatedSprite2D.position
+
+func _on_jump() -> void:
+	print(\"jump success\")
+	velocity.y = JUMP_VELOCITY
 	
 func _physics_process(delta: float) -> void:
 	var player = get_tree().get_nodes_in_group(\"player\")[0]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://itmu5phdowa7"]
+[gd_scene load_steps=24 format=3 uid="uid://itmu5phdowa7"]
 
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://health/instant_death.tscn" id="1_42mkj"]
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_qire6"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c76nb71oks25o" path="res://Game_Art/Background_2.jpeg" id="2_wiea2"]
 [ext_resource type="Texture2D" uid="uid://bkxuetbrlu20b" path="res://Game_Art/pirates.v1.png" id="3_pesnk"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://health/KillZone.tscn" id="5_ew3wx"]
-[ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://Game_Art/barbarossa.tscn" id="6_w38b3"]
+[ext_resource type="PackedScene" uid="uid://cr351enwbxtnl" path="res://Characters/barbarossa.tscn" id="10_gmu5u"]
+[ext_resource type="PackedScene" uid="uid://bspopux7q1tcl" path="res://Characters/jump_material.tscn" id="10_vb52w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7drur"]
 size = Vector2(15801, 161)
@@ -5052,7 +5053,15 @@ sources/11 = SubResource("TileSetAtlasSource_xlbkw")
 sources/12 = SubResource("TileSetAtlasSource_8567a")
 sources/0 = SubResource("TileSetAtlasSource_6iupx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk533"]
+size = Vector2(388.07, 64)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_qire6")]
+z_index = 3
+
+[node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="instant_death" parent="." instance=ExtResource("1_42mkj")]
 position = Vector2(3189.3, 269.423)
@@ -5060,15 +5069,6 @@ position = Vector2(3189.3, 269.423)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="instant_death"]
 position = Vector2(1848.2, -60.9229)
 shape = SubResource("RectangleShape2D_7drur")
-
-[node name="player" parent="." instance=ExtResource("1_qire6")]
-top_level = true
-z_index = 3
-safe_margin = 0.001
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.6, 0.6)
-limit_bottom = 750
 
 [node name="KillZone" parent="." instance=ExtResource("5_ew3wx")]
 position = Vector2(-17, 794)
@@ -5114,7 +5114,23 @@ layer_3/name = "Ship 2"
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(-65472, 458759, 6, -131008, 458759, 6, -131007, 458759, 6, -196543, 458759, 6, -196544, 458759, 6, -196542, 458759, 6, -131072, 458759, 6, -131071, 458759, 6, -65535, 458759, 6, -65536, 458759, 6, -65520, 458759, 6, -131056, 458759, 6)
 
-[node name="Barbarossa" parent="." instance=ExtResource("6_w38b3")]
+[node name="Jump_material" parent="." instance=ExtResource("10_vb52w")]
 z_index = 3
-position = Vector2(-335, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jump_material"]
+position = Vector2(-804.967, -74.2872)
+rotation = 0.774621
+shape = SubResource("RectangleShape2D_xk533")
+
+[node name="Jump_material2" parent="." instance=ExtResource("10_vb52w")]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jump_material2"]
+position = Vector2(489, -334)
+rotation = 2.35433
+shape = SubResource("RectangleShape2D_xk533")
+
+[node name="Node2D" parent="." instance=ExtResource("10_gmu5u")]
+z_index = 3
+position = Vector2(-298, -19)
 collision_mask = 1
