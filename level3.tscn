@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://itmu5phdowa7"]
+[gd_scene load_steps=25 format=3 uid="uid://itmu5phdowa7"]
 
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://health/instant_death.tscn" id="1_42mkj"]
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_qire6"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c76nb71oks25o" path="res://Game_Art/Background_2.jpeg" id="2_wiea2"]
 [ext_resource type="Texture2D" uid="uid://bkxuetbrlu20b" path="res://Game_Art/pirates.v1.png" id="3_pesnk"]
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://health/KillZone.tscn" id="5_ew3wx"]
-[ext_resource type="PackedScene" uid="uid://bbddn8xedrcxo" path="res://Game_Art/barbarossa.tscn" id="6_w38b3"]
+[ext_resource type="PackedScene" uid="uid://cr351enwbxtnl" path="res://Characters/barbarossa.tscn" id="10_gmu5u"]
+[ext_resource type="PackedScene" uid="uid://bspopux7q1tcl" path="res://Characters/jump_material.tscn" id="10_vb52w"]
+[ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Collectibles/Healer.tscn" id="11_vody5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7drur"]
 size = Vector2(15801, 161)
@@ -139,8 +141,7 @@ texture_region_size = Vector2i(2, 2)
 
 [sub_resource type="TileSet" id="TileSet_n606t"]
 tile_size = Vector2i(1, 1)
-physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 2
+physics_layer_0/collision_layer = 2
 sources/1 = SubResource("TileSetAtlasSource_dhhc6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iupx"]
@@ -5045,14 +5046,23 @@ texture = ExtResource("3_pesnk")
 10:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.375, 16.5, 34.125, 18.5, 34.875, 18, 41.125, 23.5, -40.125, 24.25)
 
 [sub_resource type="TileSet" id="TileSet_44lxe"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/4 = SubResource("TileSetAtlasSource_lhsvv")
 sources/7 = SubResource("TileSetAtlasSource_lvy1r")
 sources/11 = SubResource("TileSetAtlasSource_xlbkw")
 sources/12 = SubResource("TileSetAtlasSource_8567a")
 sources/0 = SubResource("TileSetAtlasSource_6iupx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk533"]
+size = Vector2(388.07, 64)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_qire6")]
+z_index = 3
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="instant_death" parent="." instance=ExtResource("1_42mkj")]
 position = Vector2(3189.3, 269.423)
@@ -5060,15 +5070,6 @@ position = Vector2(3189.3, 269.423)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="instant_death"]
 position = Vector2(1848.2, -60.9229)
 shape = SubResource("RectangleShape2D_7drur")
-
-[node name="player" parent="." instance=ExtResource("1_qire6")]
-top_level = true
-z_index = 3
-safe_margin = 0.001
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.6, 0.6)
-limit_bottom = 750
 
 [node name="KillZone" parent="." instance=ExtResource("5_ew3wx")]
 position = Vector2(-17, 794)
@@ -5114,7 +5115,119 @@ layer_3/name = "Ship 2"
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(-65472, 458759, 6, -131008, 458759, 6, -131007, 458759, 6, -196543, 458759, 6, -196544, 458759, 6, -196542, 458759, 6, -131072, 458759, 6, -131071, 458759, 6, -65535, 458759, 6, -65536, 458759, 6, -65520, 458759, 6, -131056, 458759, 6)
 
-[node name="Barbarossa" parent="." instance=ExtResource("6_w38b3")]
+[node name="Jump_material" parent="." instance=ExtResource("10_vb52w")]
 z_index = 3
-position = Vector2(-335, -12)
-collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jump_material"]
+position = Vector2(-804.967, -74.2872)
+rotation = 0.774621
+shape = SubResource("RectangleShape2D_xk533")
+
+[node name="Jump_material2" parent="." instance=ExtResource("10_vb52w")]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jump_material2"]
+position = Vector2(489, -334)
+rotation = 2.35433
+shape = SubResource("RectangleShape2D_xk533")
+
+[node name="Node2D" parent="." instance=ExtResource("10_gmu5u")]
+z_index = 3
+position = Vector2(-298, -19)
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Area2D" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(3947, 65)
+scale = Vector2(2, 2)
+
+[node name="Area2D2" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(6352, 57)
+scale = Vector2(2, 2)
+
+[node name="Area2D3" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(4033, 66)
+scale = Vector2(2, 2)
+
+[node name="Area2D4" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(4406, 62)
+scale = Vector2(2, 2)
+
+[node name="Area2D5" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(4438, 65)
+scale = Vector2(2, 2)
+
+[node name="Area2D6" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(4817, 53)
+scale = Vector2(2, 2)
+
+[node name="Area2D7" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(4793, 53)
+scale = Vector2(2, 2)
+
+[node name="Area2D8" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(5483, 61)
+scale = Vector2(2, 2)
+
+[node name="Area2D9" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(5247, 50)
+scale = Vector2(2, 2)
+
+[node name="Area2D10" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(5278, 45)
+scale = Vector2(2, 2)
+
+[node name="Area2D11" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(5522, 63)
+scale = Vector2(2, 2)
+
+[node name="Area2D12" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(5918, 63)
+scale = Vector2(2, 2)
+
+[node name="Area2D13" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(6310, 65)
+scale = Vector2(2, 2)
+
+[node name="Area2D14" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(7320, 24)
+scale = Vector2(2, 2)
+
+[node name="Area2D15" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(7609, 27)
+scale = Vector2(2, 2)
+
+[node name="Area2D16" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(9443, 66)
+scale = Vector2(2, 2)
+
+[node name="Area2D17" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(7742, 33)
+scale = Vector2(2, 2)
+
+[node name="Area2D18" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(7715, 33)
+scale = Vector2(2, 2)
+
+[node name="Area2D19" parent="Collectibles" instance=ExtResource("11_vody5")]
+z_index = 4
+position = Vector2(9410, 64)
+scale = Vector2(2, 2)

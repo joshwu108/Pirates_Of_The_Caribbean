@@ -1,6 +1,6 @@
 extends Node
 
-var health: int = 1000 
+var health: int = 2000 
 
 func _reset_Health() -> void:
-	health = 1000
+	health = 2000

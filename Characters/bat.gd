@@ -20,9 +20,17 @@ var patrol_end_position = Vector2.ZERO
 func _ready():
 	add_to_group("bats")
 	# Set patrol start and end points based on position
+	var player = get_tree().get_nodes_in_group("damage_material")[0]
+	player.connect("bat_entered", Callable(self, "_on_entered_sword"))
 	patrol_start_position = position
 	patrol_end_position = patrol_start_position + Vector2(patrol_range, 0)
 
+func _on_entered_sword(enemy):
+	if enemy == self:
+		health -= 100
+	if health <= 0:
+		_die()
+	
 
 func _process(delta):
 	if is_patrolling:
@@ -68,7 +76,4 @@ func is_within_detection_range() -> bool:
 	
 func _die():
 	$AnimatedSprite2D.visible = false  
-	set_process(false) 
-	set_physics_process(false)  
-	set_collision_layer_value(1, false)
-	$KillZone/CollisionShape2D.set_deferred("disabled", true)
+	queue_free()
