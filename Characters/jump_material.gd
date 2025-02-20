@@ -1,6 +1,6 @@
 extends Area2D
 
-signal jump()
+signal jump(body)
 
 func _ready():
 	add_to_group("jump")
@@ -8,7 +8,5 @@ func _ready():
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if get_tree().get_nodes_in_group("enemy").size() > 0 && body == get_tree().get_nodes_in_group("enemy")[0]:
-		emit_signal("jump")
-		print("jumped")
+	emit_signal("jump", body)
 		

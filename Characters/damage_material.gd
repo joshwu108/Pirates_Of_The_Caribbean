@@ -32,4 +32,6 @@ func _on_body_entered(body: Node2D) -> void:
 		print("damage_done")
 	elif get_tree().get_nodes_in_group("bats").size() > 0 && body.is_in_group("bats"):
 		emit_signal("bat_entered", body)
+	elif get_tree().get_nodes_in_group("humanoid").size() > 0 && body.is_in_group("humanoid"):
+		emit_signal("bat_entered", body)
 		
