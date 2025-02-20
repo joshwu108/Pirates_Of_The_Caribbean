@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const detect_range = 500.0
 var health = 200
@@ -25,6 +25,18 @@ func _ready()-> void:
 		sprite.frame = 12
 	elif random == 4:
 		sprite.frame == 16
+		
+	var rand = randi_range(0, 4)
+	if rand == 0:
+		SPEED = 160
+	elif rand == 1:
+		SPEED = 180
+	elif rand == 2:
+		SPEED = 200
+	elif rand == 3:
+		SPEED = 220
+	elif rand == 4:
+		SPEED = 240
 	
 func _on_entered_sword(enemy):
 	if enemy == self:
