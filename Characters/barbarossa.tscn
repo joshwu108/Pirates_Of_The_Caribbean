@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://cr351enwbxtnl"]
+
+[ext_resource type="Texture2D" uid="uid://t3plsppldy6v" path="res://PNG/3/3_3-PIRATE_ATTACK_000.png" id="1_ogaof"]
+[ext_resource type="Texture2D" uid="uid://c8oxajl185gix" path="res://PNG/3/3_3-PIRATE_ATTACK_001.png" id="2_83e7q"]
+[ext_resource type="Texture2D" uid="uid://d2wsgsfbbff6i" path="res://PNG/3/3_3-PIRATE_ATTACK_002.png" id="3_fv1aw"]
+[ext_resource type="Texture2D" uid="uid://c0hdl28og0ejn" path="res://PNG/3/3_3-PIRATE_ATTACK_003.png" id="4_38q4k"]
+[ext_resource type="Texture2D" uid="uid://clsl87poldepv" path="res://PNG/3/3_3-PIRATE_ATTACK_004.png" id="5_eg78q"]
+[ext_resource type="Texture2D" uid="uid://by1t2asfb2bl" path="res://PNG/3/3_3-PIRATE_ATTACK_005.png" id="6_c14lq"]
+[ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://health/KillZone.tscn" id="8_ylsbf"]
+
+[sub_resource type="GDScript" id="GDScript_xpyf3"]
+script/source = "extends CharacterBody2D
+
+const SPEED = 250.0
+const attack_range = 50
+const detect_range = 600
+const JUMP_VELOCITY = -450
+@onready var raycast = $RayCast2D
+@onready var raycast_front = $RayCast2D2
+@export var health = 500
+@onready var killzone = $AnimatedSprite2D/KillZone
+
+func _ready() -> void:
+	$AnimatedSprite2D.visible = true
+	add_to_group(\"enemy\")
+	
+func _process(delta: float) -> void:
+	#Jumping
+	var jumps = get_tree().get_nodes_in_group(\"jump\")
+	for jump in jumps:
+		if not jump.is_connected(\"jump\", Callable(self, \"_on_jump\")):
+			jump.connect(\"jump\", Callable(self, \"_on_jump\"))
+	killzone.position = $AnimatedSprite2D.position
+
+func _on_jump(body) -> void:
+	if body == self:
+		velocity.y = JUMP_VELOCITY
+	
+func _physics_process(delta: float) -> void:
+	var player = get_tree().get_nodes_in_group(\"player\")[0]
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
+	var distance = self.global_position.distance_to(player.global_position)
+	var direction = (player.global_position - global_position).normalized()
+	
+	#detecting the player
+	if distance < detect_range:
+		velocity.x = SPEED * direction.x
+	else:
+		velocity.x = 0
+	
+	#changing directions
+	if direction.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else :
+		$AnimatedSprite2D.flip_h = false
+			
+	#jumping when running into barriers
+	if raycast_front.is_colliding():
+		velocity.y = JUMP_VELOCITY
+		
+	#Dying
+	if health < 0:
+		_die()
+	move_and_slide()
+	
+#Make the sprite inactive
+func _die():
+	$AnimatedSprite2D.visible = false  
+	set_process(false) 
+	set_physics_process(false)  
+	set_collision_layer_value(1, false)
+	$AnimatedSprite2D/KillZone/CollisionShape2D.set_deferred(\"disabled\", true)  
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rutgr"]
+radius = 254.0
+height = 862.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c1sgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ogaof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_83e7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fv1aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_38q4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eg78q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c14lq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xw84k"]
+radius = 20.0
+height = 210.0
+
+[node name="Node2D" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+collision_mask = 2
+script = SubResource("GDScript_xpyf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-229, 148)
+shape = SubResource("CapsuleShape2D_rutgr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, -30)
+sprite_frames = SubResource("SpriteFrames_c1sgx")
+autoplay = "default"
+frame = 5
+frame_progress = 0.849173
+offset = Vector2(-158, 75)
+
+[node name="KillZone" parent="AnimatedSprite2D" instance=ExtResource("8_ylsbf")]
+position = Vector2(253, 157)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/KillZone"]
+position = Vector2(-463, 363)
+rotation = -1.98095
+shape = SubResource("CapsuleShape2D_xw84k")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -50)
+collision_mask = 2
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="AnimatedSprite2D/KillZone" method="_on_animated_sprite_2d_frame_changed"]

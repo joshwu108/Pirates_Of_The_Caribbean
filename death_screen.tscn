@@ -1,7 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://gwx768e3cdod"]
+[gd_scene load_steps=5 format=3 uid="uid://cmdok7fdmhc1g"]
 
-[ext_resource type="Script" path="res://death_screen.gd" id="1_i8rms"]
 [ext_resource type="Texture2D" uid="uid://bpnkmypov4ewa" path="res://Game_Art/end_scene.png" id="2_m18o6"]
+
+[sub_resource type="GDScript" id="GDScript_ug5wl"]
+script/source = "extends Node2D
+
+
+
+func _on_home_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://start_screen.tscn\")
+
+
+func _on_start_over_pressed() -> void:
+	Global._reset_Health()
+	get_tree().change_scene_to_file(\"res://game.tscn\")
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0faa2"]
 texture = ExtResource("2_m18o6")
@@ -12,7 +25,7 @@ texture = ExtResource("2_m18o6")
 sources/1 = SubResource("TileSetAtlasSource_0faa2")
 
 [node name="Death_Screen" type="Node2D"]
-script = ExtResource("1_i8rms")
+script = SubResource("GDScript_ug5wl")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4u7tk")

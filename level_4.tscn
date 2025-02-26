@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxcqust7f42dr"]
 
-[ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Sand Tiles.png" id="1_p0mkb"]
-[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_r8qjt"]
+[ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Game_Art/Sand Tiles.png" id="1_p0mkb"]
+[ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_r8qjt"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_7g5pb"]
 [ext_resource type="Texture2D" uid="uid://c7ug142uew30j" path="res://Game_Art/Magic-Cliffs-Environment/PNG/tileset.png" id="3_hrhpo"]
 
