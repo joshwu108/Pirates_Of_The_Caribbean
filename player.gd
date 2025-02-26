@@ -2,8 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
+@export var Health = 1000
 
 var is_facing_right = true  
+
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -44,3 +48,7 @@ func on_attack() -> void:
 	await $AnimatedSprite2D2.animation_finished
 	$AnimatedSprite2D2.visible = false
 	$AnimatedSprite2D.visible = true
+
+
+func _on_next_level_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

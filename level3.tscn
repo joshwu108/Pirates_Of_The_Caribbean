@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://itmu5phdowa7"]
+[gd_scene load_steps=14 format=3 uid="uid://bcptxaye07o3w"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://player.tscn" id="1_qire6"]
+[ext_resource type="PackedScene" path="res://health_bar.tscn" id="1_tpfro"]
 [ext_resource type="Texture2D" uid="uid://cydtjjh4yewgi" path="res://Game_Art/DALL·E 2025-01-09 09.56.23 - A 2D flat tileset featuring Caribbean pirate town buildings designed as side-view backgrounds. Each building is colorful and modular, with wooden text.webp" id="2_c2je6"]
 [ext_resource type="Texture2D" uid="uid://c76nb71oks25o" path="res://Game_Art/Background_2.jpeg" id="2_wiea2"]
 [ext_resource type="Texture2D" uid="uid://bkxuetbrlu20b" path="res://Game_Art/pirates.v1.png" id="3_pesnk"]
-[ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://KillZone.tscn" id="5_ew3wx"]
+[ext_resource type="PackedScene" path="res://KillZone.tscn" id="5_ew3wx"]
+[ext_resource type="PackedScene" path="res://barbarossa.tscn" id="6_w38b3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlbkw"]
 texture = ExtResource("2_wiea2")
@@ -4828,3 +4830,11 @@ position = Vector2(-17, 794)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(3050.5, 162)
 shape = SubResource("RectangleShape2D_ncxf1")
+
+[node name="Node2D" parent="." instance=ExtResource("6_w38b3")]
+top_level = true
+z_index = 1000
+position = Vector2(-583, -13)
+collision_mask = 1
+
+[node name="Health_Bar" parent="." instance=ExtResource("1_tpfro")]
