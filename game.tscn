@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_5fiff"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
-
 [ext_resource type="PackedScene" uid="uid://bv52w8poygygw" path="res://health/KillZone.tscn" id="3_iavar"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="4_gxo8g"]
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://health/instant_death.tscn" id="6_d0hnc"]
