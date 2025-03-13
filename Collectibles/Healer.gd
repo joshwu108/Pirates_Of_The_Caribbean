@@ -5,7 +5,7 @@ var frame_timer = 0.0  # Timer for changing frames
 
 func _ready() -> void:
 	sprite.visible = true
-	if get_tree().current_scene.scene_file_path == "res://game.tscn":
+	if get_tree().current_scene.scene_file_path == "res://game.tscn" || get_tree().current_scene.scene_file_path == "res://Level_2.tscn":
 		var random_num = randi_range(0, 1)
 		if random_num == 0:
 			$AnimatedSprite2D.frame = 3

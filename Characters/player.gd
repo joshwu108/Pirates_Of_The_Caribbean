@@ -60,3 +60,7 @@ func on_attack() -> void:
 	await $AnimatedSprite2D2.animation_finished
 	$AnimatedSprite2D2.visible = false
 	$AnimatedSprite2D.visible = true
+
+
+func _on_next_level_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
