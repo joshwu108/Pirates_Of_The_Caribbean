@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxcqust7f42dr"]
+[gd_scene load_steps=15 format=3 uid="uid://calesxw81nlt2"]
 
 [ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Game_Art/Sand Tiles.png" id="1_p0mkb"]
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_r8qjt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c7ug142uew30j" path="res://Game_Art/Magic-Cliffs-Environment/PNG/tileset.png" id="3_hrhpo"]
 [ext_resource type="Texture2D" uid="uid://bkxuetbrlu20b" path="res://Game_Art/pirates.v1.png" id="5_bd433"]
 [ext_resource type="Script" path="res://nextlevel_4.gd" id="6_4xdbb"]
+[ext_resource type="Texture2D" uid="uid://bqt7amhnfdu52" path="res://Turner4.png" id="7_ljwrw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hvt6"]
 texture = ExtResource("1_p0mkb")
@@ -17315,6 +17316,11 @@ offset_right = 412.0
 offset_bottom = -320.0
 theme_override_fonts/font = SubResource("FontFile_awveu")
 theme_override_font_sizes/font_size = 31
-text = "Seems like they're still chasing you... go runnn to the town!!!"
+text = "Seems like they're still chasing you... go running to the town!!!"
+
+[node name="Turner4" type="Sprite2D" parent="."]
+position = Vector2(-90, -113)
+scale = Vector2(0.359999, 0.359999)
+texture = ExtResource("7_ljwrw")
 
 [connection signal="body_entered" from="nextlevel4" to="nextlevel4" method="_on_body_entered"]

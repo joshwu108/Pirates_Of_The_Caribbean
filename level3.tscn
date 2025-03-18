@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bcptxaye07o3w"]
+[gd_scene load_steps=30 format=3 uid="uid://bcptxaye07o3w"]
 
 [ext_resource type="PackedScene" uid="uid://h1u783gk0juw" path="res://health/instant_death.tscn" id="1_42mkj"]
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_qire6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Collectibles/Healer.tscn" id="11_vody5"]
 [ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="12_bt2s4"]
 [ext_resource type="Script" path="res://area_2d.gd" id="13_8615o"]
+[ext_resource type="Texture2D" uid="uid://ca6ksispudci" path="res://Turner3.png" id="14_4wvp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7drur"]
 size = Vector2(15801, 161)
@@ -5517,5 +5518,11 @@ script = ExtResource("13_8615o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-14, -95)
 shape = SubResource("RectangleShape2D_8ia7c")
+
+[node name="Turner3" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(11236, 9)
+scale = Vector2(0.24002, 0.24002)
+texture = ExtResource("14_4wvp1")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

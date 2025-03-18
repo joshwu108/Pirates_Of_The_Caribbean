@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://duliqtjn6fx8i"]
+[gd_scene load_steps=24 format=3 uid="uid://duliqtjn6fx8i"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_347c2"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_anvax"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Collectibles/Healer.tscn" id="8_bbyx1"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health/health_bar.tscn" id="8_mvnbx"]
 [ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="9_wvwil"]
+[ext_resource type="Texture2D" uid="uid://bd2taf8oobsvp" path="res://Turner2.png" id="10_t7hw6"]
+[ext_resource type="Texture2D" uid="uid://ctwdc3tyx5rit" path="res://Turner2.2.png" id="11_fb4fp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kluim"]
 texture = ExtResource("2_anvax")
@@ -21162,7 +21164,7 @@ offset_left = -1036.0
 offset_top = 47.0
 offset_right = -511.0
 offset_bottom = 98.0
-text = "Get to the boat run!!!! Find the staricase down to the ship..."
+text = "Get to the boat run!!!! Find the staircase down to the ship..."
 uppercase = true
 
 [node name="Area2D2" parent="." instance=ExtResource("8_bbyx1")]
@@ -21181,6 +21183,17 @@ z_index = 1
 position = Vector2(-221, 9)
 scale = Vector2(-1.38, 1.5)
 collision_mask = 2
+
+[node name="Turner2" type="Sprite2D" parent="."]
+position = Vector2(-948, -29)
+scale = Vector2(0.240002, 0.240002)
+texture = ExtResource("10_t7hw6")
+
+[node name="Turner2_2" type="Sprite2D" parent="."]
+position = Vector2(886, 238)
+rotation = 0.507626
+scale = Vector2(0.297482, 0.297482)
+texture = ExtResource("11_fb4fp")
 
 [connection signal="body_entered" from="nextLevel" to="nextLevel" method="_on_body_entered"]
 [connection signal="child_entered_tree" from="nextLevel" to="player" method="_on_character_body_2d_child_entered_tree"]
