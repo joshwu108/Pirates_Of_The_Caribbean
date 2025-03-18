@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqhn2gxnxj7xh"]
+[gd_scene load_steps=12 format=3 uid="uid://c2w7kkiak40sv"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_852jx"]
 [ext_resource type="Texture2D" uid="uid://c5b4wwn35fqi1" path="res://Game_Art/Gemini_Generated_Image_byw86lbyw86lbyw8.jpeg" id="2_deoin"]
 [ext_resource type="Texture2D" uid="uid://c7ug142uew30j" path="res://Game_Art/Magic-Cliffs-Environment/PNG/tileset.png" id="3_j83cc"]
 [ext_resource type="Texture2D" uid="uid://r7j7goix3qvl" path="res://upscaled_image-Photoroom.png" id="3_khi7s"]
 [ext_resource type="Script" path="res://nextlevel_5.gd" id="5_2qfpv"]
+[ext_resource type="Texture2D" uid="uid://bchsehnmpqfjo" path="res://Turner5.png" id="6_8jy80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkneu"]
 texture = ExtResource("2_deoin")
@@ -21267,5 +21268,10 @@ script = ExtResource("5_2qfpv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nextlevel5"]
 position = Vector2(9.25, -70.25)
 shape = SubResource("RectangleShape2D_rd1mq")
+
+[node name="Turner5" type="Sprite2D" parent="."]
+position = Vector2(361, -137)
+scale = Vector2(0.320001, 0.320001)
+texture = ExtResource("6_8jy80")
 
 [connection signal="body_entered" from="nextlevel5" to="nextlevel5" method="_on_body_entered"]

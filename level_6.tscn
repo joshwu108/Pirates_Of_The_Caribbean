@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dha3bal865hyg"]
+[gd_scene load_steps=22 format=3 uid="uid://dkspm48ajqv65"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_gxd4l"]
 [ext_resource type="Texture2D" uid="uid://r7j7goix3qvl" path="res://upscaled_image-Photoroom.png" id="1_kjl8c"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bqbjab82co53e" path="res://Game_Art/Screenshot_2025-01-11_at_3.46.19_PM-removebg-preview.png" id="6_u273t"]
 [ext_resource type="Script" path="res://area_2d_2.gd" id="8_dxxaf"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="9_yx663"]
+[ext_resource type="Texture2D" uid="uid://btk1bhtc1cmkl" path="res://Turner6.png" id="10_u0sen"]
+[ext_resource type="Texture2D" uid="uid://bfol50ibcbnmv" path="res://Turner6.2.png" id="11_qhiyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dyfp"]
 texture = ExtResource("1_kjl8c")
@@ -5917,5 +5919,15 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-2432, -154)
 shape = SubResource("CircleShape2D_lsnrc")
+
+[node name="Turner6" type="Sprite2D" parent="."]
+position = Vector2(-384, -678)
+scale = Vector2(0.405313, 0.405313)
+texture = ExtResource("10_u0sen")
+
+[node name="Turner6_2" type="Sprite2D" parent="."]
+position = Vector2(4918, -255)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("11_qhiyb")
 
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
