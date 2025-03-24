@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_347c2"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_anvax"]
 [ext_resource type="Texture2D" uid="uid://daq5ofuvug3xx" path="res://Game_Art/Cliff.webp" id="3_xhrjy"]
-[ext_resource type="Texture2D" uid="uid://dgcgvdxwuwayt" path="res://Game_Art/Screenshot_2025-01-11_at_3.46.19_PM-removebg-preview.png" id="4_xr816"]
+[ext_resource type="Texture2D" uid="uid://bqbjab82co53e" path="res://Game_Art/Screenshot_2025-01-11_at_3.46.19_PM-removebg-preview.png" id="4_xr816"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="6_bvthf"]
 [ext_resource type="Texture2D" uid="uid://b4e0incqwo1oo" path="res://Game_Art/Screenshot 2025-01-18 at 1.12.43 AM.png" id="6_x8ntb"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health/health_bar.tscn" id="8_mvnbx"]

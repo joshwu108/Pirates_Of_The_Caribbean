@@ -5264,12 +5264,6 @@ z_index = 3
 position = Vector2(241, -498)
 collision_mask = 2
 
-[node name="Humanoids3" parent="Humanoids" instance=ExtResource("12_bt2s4")]
-top_level = true
-z_index = 3
-position = Vector2(133, -498)
-collision_mask = 2
-
 [node name="Humanoids4" parent="Humanoids" instance=ExtResource("12_bt2s4")]
 top_level = true
 z_index = 3
@@ -5280,18 +5274,6 @@ collision_mask = 2
 top_level = true
 z_index = 3
 position = Vector2(-690, -496)
-collision_mask = 2
-
-[node name="Humanoids6" parent="Humanoids" instance=ExtResource("12_bt2s4")]
-top_level = true
-z_index = 3
-position = Vector2(-784, -502)
-collision_mask = 2
-
-[node name="Humanoids7" parent="Humanoids" instance=ExtResource("12_bt2s4")]
-top_level = true
-z_index = 3
-position = Vector2(2051, -497)
 collision_mask = 2
 
 [node name="Humanoids8" parent="Humanoids" instance=ExtResource("12_bt2s4")]
