@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://caqtuymv8cisu"]
+[gd_scene load_steps=27 format=3 uid="uid://caqtuymv8cisu"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_5fiff"]
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="2_ydr5c"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bspopux7q1tcl" path="res://Characters/jump_material.tscn" id="9_asro6"]
 [ext_resource type="PackedScene" uid="uid://bl4wy0edy7y6f" path="res://Characters/bat.tscn" id="9_ld8cv"]
 [ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="9_pdccn"]
+[ext_resource type="Texture2D" uid="uid://b0pf8272brg04" path="res://Turner1.png" id="11_rgnbx"]
+[ext_resource type="Texture2D" uid="uid://drfkv7c8grixj" path="res://Turner1.2.png" id="12_0y5xt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_745gw"]
 texture = ExtResource("4_gxo8g")
@@ -4136,7 +4138,7 @@ position = Vector2(3, 0)
 
 [node name="player" parent="." instance=ExtResource("1_5fiff")]
 visibility_layer = 2
-position = Vector2(-72, 58)
+position = Vector2(-103, 60)
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -4634,6 +4636,16 @@ collision_mask = 2
 visibility_layer = 2
 position = Vector2(3744, -238)
 collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9, 40)
+scale = Vector2(0.235604, 0.235604)
+texture = ExtResource("11_rgnbx")
+
+[node name="Turner1_2" type="Sprite2D" parent="."]
+position = Vector2(7365, 51)
+scale = Vector2(0.239961, 0.239961)
+texture = ExtResource("12_0y5xt")
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

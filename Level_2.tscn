@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bly0p6dqxdp1i"]
+[gd_scene load_steps=24 format=3 uid="uid://duliqtjn6fx8i"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_347c2"]
 [ext_resource type="Texture2D" uid="uid://c81x7tvv0uxf" path="res://Game_Art/Gemini_Generated_Image_7m4fn87m4fn87m4f.jpeg" id="2_anvax"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bqbjab82co53e" path="res://Game_Art/Screenshot_2025-01-11_at_3.46.19_PM-removebg-preview.png" id="4_xr816"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="6_bvthf"]
 [ext_resource type="Texture2D" uid="uid://b4e0incqwo1oo" path="res://Game_Art/Screenshot 2025-01-18 at 1.12.43 AM.png" id="6_x8ntb"]
+[ext_resource type="PackedScene" uid="uid://b3lrf4kmxodil" path="res://Collectibles/Healer.tscn" id="8_bbyx1"]
 [ext_resource type="PackedScene" uid="uid://c7cq6ixufsd42" path="res://health/health_bar.tscn" id="8_mvnbx"]
+[ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="9_wvwil"]
+[ext_resource type="Texture2D" uid="uid://bd2taf8oobsvp" path="res://Turner2.png" id="10_t7hw6"]
+[ext_resource type="Texture2D" uid="uid://ctwdc3tyx5rit" path="res://Turner2.2.png" id="11_fb4fp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kluim"]
 texture = ExtResource("2_anvax")
@@ -21039,8 +21043,7 @@ texture = ExtResource("4_xr816")
 23:26/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_de4rn"]
-physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 2
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_kluim")
 sources/1 = SubResource("TileSetAtlasSource_x7akn")
 sources/2 = SubResource("TileSetAtlasSource_oytsc")
@@ -21109,9 +21112,12 @@ size = Vector2(45, 37)
 [node name="Level_2" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_347c2")]
+top_level = true
 visibility_layer = 2
 z_index = 1
-position = Vector2(-993, 23)
+position = Vector2(-1019, -28)
+scale = Vector2(1, 1.00195)
+collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(8, -6)
@@ -21149,6 +21155,45 @@ position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_epn7d")
 
 [node name="Health_Bar" parent="." instance=ExtResource("8_mvnbx")]
+
+[node name="Area2D" parent="." instance=ExtResource("8_bbyx1")]
+position = Vector2(-65, 27)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1036.0
+offset_top = 47.0
+offset_right = -511.0
+offset_bottom = 98.0
+text = "Get to the boat run!!!! Find the staircase down to the ship..."
+uppercase = true
+
+[node name="Area2D2" parent="." instance=ExtResource("8_bbyx1")]
+position = Vector2(-108, 25)
+
+[node name="Humanoids2" parent="." instance=ExtResource("9_wvwil")]
+visibility_layer = 2
+z_index = 1
+position = Vector2(1198, 205)
+scale = Vector2(1.5444, 1.89)
+collision_mask = 2
+
+[node name="Humanoids" parent="." instance=ExtResource("9_wvwil")]
+visibility_layer = 2
+z_index = 1
+position = Vector2(-221, 9)
+scale = Vector2(-1.38, 1.5)
+collision_mask = 2
+
+[node name="Turner2" type="Sprite2D" parent="."]
+position = Vector2(-948, -29)
+scale = Vector2(0.240002, 0.240002)
+texture = ExtResource("10_t7hw6")
+
+[node name="Turner2_2" type="Sprite2D" parent="."]
+position = Vector2(886, 238)
+rotation = 0.507626
+scale = Vector2(0.297482, 0.297482)
+texture = ExtResource("11_fb4fp")
 
 [connection signal="body_entered" from="nextLevel" to="nextLevel" method="_on_body_entered"]
 [connection signal="child_entered_tree" from="nextLevel" to="player" method="_on_character_body_2d_child_entered_tree"]

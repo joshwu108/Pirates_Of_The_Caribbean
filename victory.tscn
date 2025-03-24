@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd1oxwfdwx5ea"]
+
+[ext_resource type="Texture2D" uid="uid://b45hxrwu85x32" path="res://Game_Art/Screenshot 2025-03-12 at 9.48.36 AM.png" id="1_y7ylg"]
+
+[node name="Victory" type="Node2D"]
+
+[node name="Screenshot2025-03-12At9_48_36 am" type="Sprite2D" parent="."]
+position = Vector2(587, 333.5)
+scale = Vector2(0.944895, 0.608893)
+texture = ExtResource("1_y7ylg")
