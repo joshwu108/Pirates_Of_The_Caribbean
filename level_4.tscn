@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://calesxw81nlt2"]
+[gd_scene load_steps=16 format=3 uid="uid://calesxw81nlt2"]
 
 [ext_resource type="Texture2D" uid="uid://cvgru8h4qkrls" path="res://Game_Art/Sand Tiles.png" id="1_p0mkb"]
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_r8qjt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkxuetbrlu20b" path="res://Game_Art/pirates.v1.png" id="5_bd433"]
 [ext_resource type="Script" path="res://nextlevel_4.gd" id="6_4xdbb"]
 [ext_resource type="Texture2D" uid="uid://bqt7amhnfdu52" path="res://Turner4.png" id="7_ljwrw"]
+[ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="8_sc8ey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hvt6"]
 texture = ExtResource("1_p0mkb")
@@ -17322,5 +17323,32 @@ text = "Seems like they're still chasing you... go running to the town!!!"
 position = Vector2(-90, -113)
 scale = Vector2(0.359999, 0.359999)
 texture = ExtResource("7_ljwrw")
+
+[node name="Humanoids" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(787, -54)
+
+[node name="Humanoids2" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(1003, -48)
+
+[node name="Humanoids3" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(1288, -40)
+
+[node name="Humanoids4" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(2785, -35)
+
+[node name="Humanoids5" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(2919, -35)
+
+[node name="Humanoids6" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(4517, -41)
+
+[node name="Humanoids7" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(4634, -34)
+
+[node name="Humanoids8" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(7470, -122)
+
+[node name="Humanoids9" parent="." instance=ExtResource("8_sc8ey")]
+position = Vector2(7781, -122)
 
 [connection signal="body_entered" from="nextlevel4" to="nextlevel4" method="_on_body_entered"]

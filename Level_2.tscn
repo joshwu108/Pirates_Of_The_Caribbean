@@ -21195,5 +21195,23 @@ rotation = 0.507626
 scale = Vector2(0.297482, 0.297482)
 texture = ExtResource("11_fb4fp")
 
+[node name="Humanoids3" parent="." instance=ExtResource("9_wvwil")]
+position = Vector2(-113, 10)
+
+[node name="Humanoids4" parent="." instance=ExtResource("9_wvwil")]
+position = Vector2(591, 7)
+
+[node name="Humanoids5" parent="." instance=ExtResource("9_wvwil")]
+position = Vector2(730, 25)
+
+[node name="Humanoids6" parent="." instance=ExtResource("9_wvwil")]
+position = Vector2(1670, 10)
+
+[node name="Humanoids7" parent="." instance=ExtResource("9_wvwil")]
+position = Vector2(1811, 16)
+
+[node name="Humanoids8" parent="." instance=ExtResource("9_wvwil")]
+position = Vector2(443, 207)
+
 [connection signal="body_entered" from="nextLevel" to="nextLevel" method="_on_body_entered"]
 [connection signal="child_entered_tree" from="nextLevel" to="player" method="_on_character_body_2d_child_entered_tree"]
