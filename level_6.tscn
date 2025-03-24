@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dkspm48ajqv65"]
+[gd_scene load_steps=23 format=3 uid="uid://bht13s178rmbh"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_gxd4l"]
 [ext_resource type="Texture2D" uid="uid://r7j7goix3qvl" path="res://upscaled_image-Photoroom.png" id="1_kjl8c"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ca6rl8o81glyl" path="res://Game_Art/Prision.png" id="9_yx663"]
 [ext_resource type="Texture2D" uid="uid://btk1bhtc1cmkl" path="res://Turner6.png" id="10_u0sen"]
 [ext_resource type="Texture2D" uid="uid://bfol50ibcbnmv" path="res://Turner6.2.png" id="11_qhiyb"]
+[ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="12_cqlu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dyfp"]
 texture = ExtResource("1_kjl8c")
@@ -5929,5 +5930,29 @@ texture = ExtResource("10_u0sen")
 position = Vector2(4918, -255)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("11_qhiyb")
+
+[node name="Humanoids" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(269, -359)
+
+[node name="Humanoids2" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(531, -221)
+
+[node name="Humanoids3" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(499, -881)
+
+[node name="Humanoids4" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(1059, -479)
+
+[node name="Humanoids5" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(1756, -582)
+
+[node name="Humanoids6" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(2780, -815)
+
+[node name="Humanoids7" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(3478, -893)
+
+[node name="Humanoids8" parent="." instance=ExtResource("12_cqlu8")]
+position = Vector2(3714, -886)
 
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

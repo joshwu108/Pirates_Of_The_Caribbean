@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2w7kkiak40sv"]
+[gd_scene load_steps=14 format=3 uid="uid://c2w7kkiak40sv"]
 
 [ext_resource type="PackedScene" uid="uid://dv0k6m28nptvx" path="res://Characters/player.tscn" id="1_852jx"]
 [ext_resource type="Texture2D" uid="uid://c5b4wwn35fqi1" path="res://Game_Art/Gemini_Generated_Image_byw86lbyw86lbyw8.jpeg" id="2_deoin"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://r7j7goix3qvl" path="res://upscaled_image-Photoroom.png" id="3_khi7s"]
 [ext_resource type="Script" path="res://nextlevel_5.gd" id="5_2qfpv"]
 [ext_resource type="Texture2D" uid="uid://bchsehnmpqfjo" path="res://Turner5.png" id="6_8jy80"]
+[ext_resource type="PackedScene" uid="uid://few788sulcsj" path="res://Characters/humanoids.tscn" id="7_nu3wc"]
+[ext_resource type="PackedScene" uid="uid://cr351enwbxtnl" path="res://Characters/barbarossa.tscn" id="8_mq2xu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkneu"]
 texture = ExtResource("2_deoin")
@@ -21240,7 +21242,7 @@ size = Vector2(28.5, 445.5)
 [node name="player" parent="." instance=ExtResource("1_852jx")]
 visibility_layer = 2
 z_index = 1
-position = Vector2(1189, -461)
+position = Vector2(839, -434)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-714, 249)
@@ -21273,5 +21275,32 @@ shape = SubResource("RectangleShape2D_rd1mq")
 position = Vector2(361, -137)
 scale = Vector2(0.320001, 0.320001)
 texture = ExtResource("6_8jy80")
+
+[node name="Humanoids" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(1413, -124)
+
+[node name="Humanoids2" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(1530, -119)
+
+[node name="Humanoids3" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(1985, -100)
+
+[node name="Humanoids4" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(2120, -108)
+
+[node name="Node2D" parent="." instance=ExtResource("8_mq2xu")]
+position = Vector2(3545, -126)
+
+[node name="Humanoids5" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(2650, -100)
+
+[node name="Humanoids6" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(2752, -90)
+
+[node name="Humanoids7" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(4375, -93)
+
+[node name="Humanoids8" parent="." instance=ExtResource("7_nu3wc")]
+position = Vector2(4444, -93)
 
 [connection signal="body_entered" from="nextlevel5" to="nextlevel5" method="_on_body_entered"]
